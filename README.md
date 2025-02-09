@@ -1,5 +1,25 @@
 ### simple bot whatsapp by ikhwan ganteng
 
+## what you need to run this bot?
+
+1. nodejs
+
+## if you using termux, run
+
+```sh
+
+pkg install nodejs -y
+
+```
+
+## then run
+
+```sh
+
+npm start
+
+```
+
 ## if you want make new command
 
 ```sh
@@ -8,7 +28,7 @@ npm run make:controller <name>
 
 ```
 
-## then edit route.ts file
+## then edit route.ts file from
 
 ```ts
 // ./src/routes.ts
