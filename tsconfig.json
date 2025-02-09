@@ -1,0 +1,47 @@
+{
+    "compilerOptions": {
+        "target": "ES2021", // Kompatibel dengan ECMAScript 2021
+        "module": "CommonJS", // Node.js menggunakan modul CommonJS
+        "lib": [
+            "ES2021"
+        ], // Pustaka standar ECMAScript 2021
+        "esModuleInterop": true, // Mempermudah impor modul CommonJS
+        "allowSyntheticDefaultImports": true, // Mendukung impor default
+        "strict": true, // Pemeriksaan tipe ketat
+        "moduleResolution": "node", // Resolusi modul berbasis Node.js
+        "resolveJsonModule": true, // Mendukung impor file JSON
+        "outDir": "./dist", // Direktori hasil build
+        "baseUrl": ".", // Basis jalur untuk alias
+        "paths": { // Alias jalur untuk mempermudah impor
+            "@/*": [
+                "./src/*"
+            ],
+            "@controller/*": [
+                "./controller/*"
+            ],
+            "@utils/*": [
+                "./utils/*"
+            ]
+        },
+        "skipLibCheck": true, // Melewati pemeriksaan file pustaka
+        "forceConsistentCasingInFileNames": true, // Konsistensi kapitalisasi nama file
+        "noImplicitAny": true, // Mencegah tipe `any` implisit
+        "strictNullChecks": true, // Pemeriksaan null dan undefined secara ketat
+        "allowJs": true, // Mendukung file JavaScript
+        "checkJs": false, // Tidak memeriksa file JavaScript
+        "noEmitOnError": false, // Tetap melakukan build meskipun ada error
+        "incremental": true, // Mempercepat build dengan file cache
+        "experimentalDecorators": true, // Mendukung decorator (jika diperlukan)
+        "emitDecoratorMetadata": true // Metadata decorator untuk class (jika diperlukan)
+    },
+    "include": [
+        "src",
+        "controller",
+        "utils"
+    ], // Sertakan semua file di direktori `src`
+    "exclude": [
+        "node_modules",
+        "dist",
+        "system"
+    ] // Kecualikan `node_modules` dan `dist`
+}

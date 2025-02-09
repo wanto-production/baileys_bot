@@ -1,0 +1,40 @@
+{
+  "name": "boilerplate_nodets",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx ts-node src/index.ts",
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write .",
+    "make:controller": "node system/ace.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.12.0",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "^3.4.2",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "packageManager": "yarn@1.22.0+sha512.28c1cffc9ab9de364a4d8f624d4b77748565fdb7ba50fb3620da3debe0676472cac583537f03269601d368c5b2199a0eef8448e00205be75a162b5ead9448992",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.23.0",
+    "@typescript-eslint/parser": "^8.23.0",
+    "@whiskeysockets/baileys": "^6.7.12",
+    "axios": "^1.7.9",
+    "commander": "^13.1.0",
+    "qrcode-terminal": "^0.12.0",
+    "turso": "^0.1.0"
+  },
+  "trustedDependencies": [
+    "protobufjs"
+  ]
+}
