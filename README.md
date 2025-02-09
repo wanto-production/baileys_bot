@@ -1,4 +1,4 @@
-### simple bot whatsapp by ikhwan ganteng
+## simple bot whatsapp by ikhwan ganteng
 
 ## what you need to run this bot?
 
