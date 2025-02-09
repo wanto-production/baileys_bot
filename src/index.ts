@@ -1,11 +1,8 @@
 import { routeRules } from '@/routes'
 import makeWASocket, { useMultiFileAuthState, DisconnectReason } from '@whiskeysockets/baileys';
 import { addProcessedMessage, getProcessedMessages } from '@utils/processing';
-import { readJson } from '@utils/files';
 
 import pino from 'pino';
-import fs from 'fs';
-import { getBody } from '@utils/getbody';
 import { antilinkMiddleware } from '@utils/middleware';
 
 async function connectToWhatsApp() {
