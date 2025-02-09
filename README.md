@@ -11,6 +11,8 @@ npm run make:controller <name>
 ## then edit route.ts file
 
 ```ts
+// ./src/routes.ts
+
 import { addController } from '@controller/add.controller'
 import { antilinkController } from '@controller/antilink.controller'
 import { demoteController } from '@controller/demote.controller'
@@ -33,6 +35,7 @@ export const routeRules: Routes = {
 ## to
 
 ```ts
+// ./src/routes.ts
 
 import { addController } from '@controller/add.controller'
 import { antilinkController } from '@controller/antilink.controller'
