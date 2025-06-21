@@ -4,7 +4,7 @@ import makeWASocket, {
   DisconnectReason,
 } from '@whiskeysockets/baileys'
 import { addProcessedMessage, getProcessedMessages } from '@utils/processing'
-
+import qrcode from 'qrcode-terminal'
 import pino from 'pino'
 import { antilinkMiddleware } from '@utils/middleware'
 
@@ -17,7 +17,12 @@ async function connectToWhatsApp() {
   })
 
   sock.ev.on('connection.update', (update) => {
-    const { connection, lastDisconnect } = update
+    const { connection, lastDisconnect, qr } = update
+
+    if (qr) {
+      qrcode.generate(qr, { small: true })
+    }
+
     if (connection === 'close') {
       const shouldReconnect =
         (lastDisconnect?.error as any)?.output?.statusCode !==
