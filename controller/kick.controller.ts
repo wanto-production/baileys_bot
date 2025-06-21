@@ -1,22 +1,26 @@
-import { getNumber } from '@utils/getbody';
-import { BaileysEventMap, WASocket } from '@whiskeysockets/baileys';
-import { groupMiddleware, participantsUpdateMiddleware } from '@utils/middleware';
+import { getNumber } from '@utils/getbody'
+import { BaileysEventMap, WASocket } from '@whiskeysockets/baileys'
+import {
+  groupMiddleware,
+  participantsUpdateMiddleware,
+} from '@utils/middleware'
 
 export class kickController {
+  static async main(event: BaileysEventMap['messages.upsert'], sock: WASocket) {
+    for (const m of event.messages) {
+      await groupMiddleware('kick', m, sock)
 
-    static async main(event: BaileysEventMap["messages.upsert"], sock: WASocket) {
-        for (const m of event.messages) {
-            await groupMiddleware(m, sock)
+      const body = getNumber(m)
 
-            const body = getNumber(m)
+      await participantsUpdateMiddleware(m, sock, '!kick')
 
-            await participantsUpdateMiddleware(m, sock, "!kick")
+      const participatsJid = `${body}@s.whatsapp.net`
 
-            const participatsJid = `${body}@s.whatsapp.net`
-
-            await sock.groupParticipantsUpdate(m.key.remoteJid as string, [participatsJid], "remove")
-
-        }
+      await sock.groupParticipantsUpdate(
+        m.key.remoteJid as string,
+        [participatsJid],
+        'remove',
+      )
     }
+  }
 }
-
